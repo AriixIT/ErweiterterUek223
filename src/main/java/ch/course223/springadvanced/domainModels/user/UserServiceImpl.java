@@ -76,6 +76,17 @@ public class UserServiceImpl implements UserService {
         return userRepository.findAll().stream().filter(user -> user.getSalary() > x && user.getSalary() < y).collect(Collectors.toList());
     }
 
+    @Override
+    public List<User> allUsersEarningAboveAverage() {
+        var wrapper = new Object(){int salaryTotal = 0; int amountUsers = 0;};
+        userRepository.findAll().stream().forEach(user -> {
+            wrapper.salaryTotal += user.getSalary();
+            wrapper.amountUsers++;
+        });
+        float average = wrapper.salaryTotal/wrapper.amountUsers;
+        return userRepository.findAll().stream().filter(user -> user.getSalary() > average).collect(Collectors.toList());
+    }
+
     // Question to be solved: What is a more ideal way of retrieving above values? 
 
 

@@ -11,4 +11,5 @@ public interface UserService {
     List<User> allUsersEarningMoreThan(int x);
     List<User> allUsersEarningLessThan(int x);
     List<User> allUsersEarningBetween(int x, int y);
+    List<User> allUsersEarningAboveAverage();
 }

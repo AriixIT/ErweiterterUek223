@@ -59,4 +59,9 @@ public class UserController {
         return new ResponseEntity<>(userService.allUsersEarningBetween(min, max), HttpStatus.OK);
     }
 
+    @GetMapping("/earningAboveAverage")
+    public @ResponseBody ResponseEntity<List<User>> getUsersEarningAboveAverage() {
+        return new ResponseEntity<>(userService.allUsersEarningAboveAverage(), HttpStatus.OK);
+    }
+
 }
