@@ -58,12 +58,6 @@ dependencies {
 
 }
 
-dockerRun {
-	image = "postgres"
-	name = "uek223advanced"
-	ports("5432:5432")
-	env 'POSTGRES_PASSWORD': 'postgres', 'POSTGRES_USER': 'postgres'
-}
 
 bootJar {
 	archiveFileName.set("app.jar")
