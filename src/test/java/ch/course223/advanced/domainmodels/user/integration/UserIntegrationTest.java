@@ -8,7 +8,6 @@ import ch.course223.advanced.domainmodels.user.User;
 import ch.course223.advanced.domainmodels.user.UserDTO;
 import ch.course223.advanced.domainmodels.user.UserRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.apache.commons.lang3.ArrayUtils;
 import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
@@ -30,9 +29,6 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
 import static org.springframework.test.annotation.DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD;
 
 @RunWith(SpringRunner.class)
